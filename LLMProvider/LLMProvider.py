@@ -4,7 +4,7 @@ from typing import Any
 import logging
 from langchain_groq import ChatGroq
 from langchain_openai import ChatOpenAI
-from Enums import ProviderName
+from Muffakir.Enums import ProviderName
 
 class LLMProvider:
 

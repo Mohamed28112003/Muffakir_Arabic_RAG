@@ -2,7 +2,7 @@ from typing import List, Dict, Any, Optional
 import logging
 from langchain.schema import Document
 
-from Enums import RetrievalMethod
+from Muffakir.Enums import RetrievalMethod
 from LLMProvider.LLMProvider import LLMProvider
 from QueryTransformer.QueryTransformer import QueryTransformer
 from PromptManager.PromptManager import PromptManager

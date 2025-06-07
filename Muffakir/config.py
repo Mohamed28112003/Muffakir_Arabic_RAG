@@ -1,6 +1,6 @@
 # config.py
 from pydantic_settings import BaseSettings   # ← updated import
-from Enums import ProviderName, RetrievalMethod, QueryType
+from Muffakir.Enums import ProviderName, RetrievalMethod, QueryType
 
 class Settings(BaseSettings):
     # external APIs

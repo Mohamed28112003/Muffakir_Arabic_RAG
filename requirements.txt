@@ -14,3 +14,5 @@ pydantic==2.11.3
 python-dotenv== 1.0.1
 pydantic-settings==2.7.1
 spacy==3.8.7
+langchain-groq==0.2.4
+langchain-openai==0.3.3

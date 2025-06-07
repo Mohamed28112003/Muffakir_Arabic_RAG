@@ -9,7 +9,7 @@ from PromptManager.PromptManager import PromptManager
 from QueryTransformer.QueryTransformer import QueryTransformer
 from HallucinationsCheck.HallucinationsCheck import HallucinationsCheck
 from RAGPipeline.RAGPipelineManager import RAGPipelineManager
-from Enums import ProviderName, RetrievalMethod
+from Muffakir.Enums import ProviderName, RetrievalMethod
 from langchain.schema import Document
 from Reranker.Reranker import Reranker
 
@@ -230,7 +230,7 @@ class MuffakirRAG:
             llm_provider=self.llm_provider,
             query_transformer=self.query_transformer,
             prompt_manager=self.prompt_manager,
-            query_processor=self.query_processor,
+         
             hallucination=self.hallucination_checker,
             reranker=self.reranker,
             k=self.config["k"],
