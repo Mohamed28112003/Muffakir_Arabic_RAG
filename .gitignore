@@ -3,3 +3,4 @@ __pycache__/
 Muffakir.egg-info
 dist
 build
+test.py
