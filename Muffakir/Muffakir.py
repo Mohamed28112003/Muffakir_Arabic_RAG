@@ -29,8 +29,8 @@ class MuffakirRAG:
         "api_key": None,
         
         # LLM Configuration
-        "llm_provider": "together",  # together, openai, groq, anthropic
-        "llm_model": "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
+        "llm_provider": None,  # together, openai, groq, anthropic
+        "llm_model": None,
         "llm_temperature": 0.0,
         "llm_max_tokens": 1000,
         
@@ -126,7 +126,7 @@ class MuffakirRAG:
 
     def _validate_config(self):
         """Validate required configuration parameters."""
-        required_params = ["data_dir", "api_key", "llm_provider"]
+        required_params = ["data_dir", "api_key", "llm_provider","llm_model"]
         
         for param in required_params:
             if not self.config.get(param):

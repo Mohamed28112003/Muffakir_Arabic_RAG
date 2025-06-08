@@ -16,8 +16,8 @@ class MuffakirSyntheticData:
     DEFAULT_CONFIG = {
         "data_dir": None,
         "api_key": None,
-        "llm_provider": "together",
-        "llm_model": "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
+        "llm_provider": None,
+        "llm_model": None,
         "llm_temperature": 0.3,
         "llm_max_tokens": 2000,
         "chunk_size": 600,
@@ -61,7 +61,7 @@ class MuffakirSyntheticData:
         return config
 
     def _validate_config(self):
-        required_params = ["data_dir", "api_key", "llm_provider"]
+        required_params = ["data_dir", "api_key", "llm_provider","llm_model"]
         for param in required_params:
             if not self.config.get(param):
                 raise ValueError(f"❌ Required parameter '{param}' is missing from configuration")

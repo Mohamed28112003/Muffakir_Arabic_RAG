@@ -15,10 +15,10 @@ class MuffakirSearch:
     
     DEFAULT_CONFIG = {
 
-        "llm_api_key": None,
+        "api_key": None,
         "fire_crawl_api" : None, 
-        "llm_provider": "together", 
-        "llm_model": "meta-llama/Llama-3.3-70B-Instruct-Turbo-Free",
+        "llm_provider": None, 
+        "llm_model": None,
         "llm_temperature": 0.0,
         "llm_max_tokens": 1000,
         "max_depth" : 1,
@@ -59,7 +59,7 @@ class MuffakirSearch:
 
     def _validate_config(self):
         """Validate required configuration parameters."""
-        required_params = ["fire_crawl_api", "llm_api_key", "llm_provider"]
+        required_params = ["fire_crawl_api", "api_key", "llm_provider","llm_model"]
         
         for param in required_params:
             if not self.config.get(param):
@@ -80,7 +80,7 @@ class MuffakirSearch:
         
         # Initialize LLM Provider
         self.llm_provider = LLMProvider(
-            api_key=self.config["llm_api_key"],
+            api_key=self.config["api_key"],
             provider=self.PROVIDER_MAPPING[self.config["llm_provider"]],
             model=self.config["llm_model"],
             temperature=self.config.get("llm_temperature", 0.0),
