@@ -6,10 +6,10 @@ class QueryTransformer:
     """
     A class responsible for transforming queries to improve retrieval.
     """
-    def __init__(self, llm_provider: LLMProvider, prompt_manager: PromptManager):
+    def __init__(self, llm_provider: LLMProvider, prompt_manager: PromptManager,prompt:str):
 
         self.llm_provider = llm_provider
-        self.query_rewrite_prompt = prompt_manager.get_prompt("query_rewrite")
+        self.query_rewrite_prompt = prompt_manager.get_prompt(prompt)
 
     def transform_query(self, original_query: str) -> str:
 
@@ -28,4 +28,3 @@ class QueryTransformer:
         except Exception as e:
             print(f"Error QueryTransformer: {e}")
             print("Switching API key and retrying QUERY...")
-

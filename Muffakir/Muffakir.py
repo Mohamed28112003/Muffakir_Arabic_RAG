@@ -401,30 +401,3 @@ class MuffakirRAG:
         return f"MuffakirRAG(provider={self.config['llm_provider']}, docs={doc_count}, k={self.config['k']})"
 
 
-# Example usage and helper functions
-def create_muffakir_config(
-    data_dir: str,
-    api_key: str,
-    llm_provider: str = "together",
-    **kwargs
-) -> Dict[str, Any]:
-    """
-    Helper function to create a MuffakirRAG configuration.
-    
-    Args:
-        data_dir (str): Directory containing documents
-        api_key (str): API key for the LLM provider
-        llm_provider (str): LLM provider name
-        **kwargs: Additional configuration options
-        
-    Returns:
-        Dict[str, Any]: Configuration dictionary
-    """
-    config = {
-        "data_dir": data_dir,
-        "api_key": api_key,
-        "llm_provider": llm_provider,
-    }
-    config.update(kwargs)
-    return config
-
